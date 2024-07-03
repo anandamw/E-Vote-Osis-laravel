@@ -2,8 +2,8 @@
 
 @section('content')
     <!--**********************************
-                                                                                                                                                                                                                                                Content body start
-                                                                                                                                                                                                                                                   ***********************************-->
+                                                                                                                                                                                                                                                                                                                                    Content body start
+                                                                                                                                                                                                                                                                                                                                       ***********************************-->
 
     <div class="content-body">
         <!-- row -->
@@ -13,27 +13,29 @@
                 @foreach ($kandidats as $item)
                     <form action="/vote/create" method="POST">
                         @csrf
-
-
                         <div class=" row-xl-3 col-xxl-3 col-sm-6">
-                            <div class="card bg-warning invoice-card">
+                            <div class="card bg-blue invoice-card">
                                 <div class="card-body d-flex">
                                     <div class="icon me-3">
-
                                         <input type="hidden" name="nama" value="{{ Auth::user()->nama }}">
                                         <!-- Ganti dengan nama voter sebenarnya -->
                                         <input type="hidden" name="kelas_id" value="{{ $item->id }}">
                                         <!-- Ganti dengan kelas_id sebenarnya -->
                                         <input type="hidden" name="kandidat_id" value="{{ $item->id }}">
                                         <input type="hidden" name="tanggal" value="{{ date('Y-m-d') }}">
-                                        <img src="{{ asset('pendaftar/' . $item->gambar) }}" width="33px" height="32px"
+                                        <img src="{{ asset('pendaftar/' . $item->foto_kandidat) }}" width="60"
+                                            height="60" style="border-radius: 50%; margin-right: 20px; "
                                             alt="Candidate Image">
                                     </div>
+
+
                                     <div>
                                         <h2 class="text-white invoice-num">{{ $item->nama_kandidat }}</h2>
-                                        <span class="text-white fs-18">{{ $item->calon_kandidat }}</span>
-                                        <span class="text-white fs-18">{{ $item->suaras_count }}</span> <br>
-                                        <div type="submit" class="text-success">Vote Sekarang</div>
+                                        <span class="text-white fs-18">{{ $item->calon_kandidat }}</span><br>
+                                        <span class="text-white fs-18">Total Suara : {{ $item->suaras_count }}</span> <br>
+                                        <button type="submit" class=" "
+                                            style="font-size: 20px  ; color: black;  padding: 10px 20px; background-color: none; border: none;">Vote
+                                            Sekarang</button>
                                         {{-- <span class="text-white fs-18">Vote Sekarang </span> --}}
                                     </div>
                                 </div>
@@ -69,7 +71,12 @@
                                             <tr>
                                                 <td><strong>{{ $loop->iteration }}</strong></td>
                                                 <td>{{ $item->calon_kandidat }}</td>
-                                                <td>{{ $item->foto_kandidat }}</td>
+                                                <td>
+                                                    <img src="{{ asset('pendaftar/' . $item->foto_kandidat) }}"
+                                                        width="60" height="60"
+                                                        style="border-radius: 50%; margin-right: 20px; "
+                                                        alt="Candidate Image">
+                                                </td>
                                                 <td>{{ $item->visi }}</td>
                                                 <td>{{ $item->misi }}</td>
                                             </tr>
@@ -84,6 +91,6 @@
         </div>
     </div>
     <!--**********************************
-                                                                                                                                                                                                                                                                                                                            Content body end
-                                                                                                                                                                                                                                                                                                                        ***********************************-->
+                                                                                                                                                                                                                                                                                                                                                                                                                Content body end
+                                                                                                                                                                                                                                                                                                                                                                                                            ***********************************-->
 @endsection

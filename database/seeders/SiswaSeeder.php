@@ -15,13 +15,13 @@ class SiswaSeeder extends Seeder
      */
     public function run()
     {
-        $siswa = [
-            ['nama' => 'Siswa 1', 'kelas_id' => 1, 'users_id' => 1],
-            ['nama' => 'Siswa 2', 'kelas_id' => 1, 'users_id' => 2],
-            ['nama' => 'Siswa 3', 'kelas_id' => 2, 'users_id' => 2],
-            ['nama' => 'Siswa 4', 'kelas_id' => 2, 'users_id' => 2],
-        ];
+        // $siswa = [
+        //     ['nama' => 'Siswa 1', 'kelas_id' => 1, 'users_id' => 1],
+        //     ['nama' => 'Siswa 2', 'kelas_id' => 1, 'users_id' => 2],
+        //     ['nama' => 'Siswa 3', 'kelas_id' => 2, 'users_id' => 2],
+        //     ['nama' => 'Siswa 4', 'kelas_id' => 2, 'users_id' => 2],
+        // ];
 
-        DB::table('siswa')->insert($siswa);
+        // DB::table('siswa')->insert($siswa);
     }
 }

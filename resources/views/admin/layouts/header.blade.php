@@ -915,21 +915,21 @@
                     </li>
                 @endif
 
-                @if (Auth::user()->role !== 'siswa')
+              
                     <li class=""><a class=" ai-icon " href="/kandidat" aria-expanded="false">
                             <i class="fa-solid fa-gear fw-bold"></i>
                             <span class="nav-text">Kandidat</span>
                         </a>
                     </li>
-                @endif
-                @if (Auth::user()->role !== 'siswa')
+               
+               
                     <li class="">
                         <a class=" ai-icon" href="/visi-misi" aria-expanded="false">
                             <i class="fa-solid fa-gear fw-bold"></i>
                             <span class="nav-text">Visi & Misi</span>
                         </a>
                     </li>
-                @endif
+              
                 @if (Auth::user()->role !== 'siswa')
                     <li class="">
                         <a class=" ai-icon" href="/user" aria-expanded="false">

@@ -32,10 +32,10 @@ class DatabaseSeeder extends Seeder
         $this->call([
             KelasSeeder::class,
             DummyUsersSeeder::class,
-            KandidatSeeder::class,
-            SiswaSeeder::class,
+            // KandidatSeeder::class,
+            // SiswaSeeder::class,
             // SuaraSeeder::class,
-            VisiMisiSeeder::class,
+            // VisiMisiSeeder::class,
             // KandidatSeeder::class,
             // PemilihanSeeder::class
         ]);

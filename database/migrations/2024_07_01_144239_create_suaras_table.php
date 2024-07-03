@@ -13,12 +13,24 @@ return new class extends Migration
      */
     public function up()
     {
+        // Schema::create('suara', function (Blueprint $table) {
+        //     $table->id();
+        //     $table->string('nama');
+        //     $table->foreignId('kelas_id');
+        //     $table->foreignId('kandidat_id');
+        //     $table->date('tanggal');
+        //     $table->timestamps();
+        // });
         Schema::create('suara', function (Blueprint $table) {
             $table->id();
             $table->string('nama');
-            $table->foreignId('kelas_id');
-            $table->foreignId('kandidat_id');
+            $table->integer('kelas_id');
+            $table->integer('kandidat_id');
             $table->date('tanggal');
+            
+            // Menambahkan konstrain unik untuk kolom 'nama' dan 'kelas_id'
+            $table->unique(['nama', 'kelas_id']);
+            
             $table->timestamps();
         });
     }

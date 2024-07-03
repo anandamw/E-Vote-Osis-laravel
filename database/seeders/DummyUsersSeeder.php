@@ -17,10 +17,10 @@ class DummyUsersSeeder extends Seeder
     {
         $createDummy = [
             [
-                'nama' => 'ananda',
+                'nama' => 'bariq',
                 'kelas_id' => '1',
 
-                'email' => 'ananda@gmail.com',
+                'email' => 'bariq@gmail.com',
                 'password' => bcrypt('123'),
                 "role" => 'admin',
             ],
@@ -35,8 +35,8 @@ class DummyUsersSeeder extends Seeder
             [
                 'kelas_id' => '2',
 
-                'nama' => 'maulana',
-                'email' => 'maulana@gmail.com',
+                'nama' => 'ika',
+                'email' => 'ika@gmail.com',
                 'password' => bcrypt('123'),
                 "role" => 'siswa',
                 // "gambar" => 'maulana.jpg',

@@ -31,16 +31,32 @@ class KandidatController extends Controller
     }
     public function create_action(Request $request)
     {
+        // Generate a unique token for file naming
+        $token = uniqid();
 
+        // Retrieve the uploaded file
+        $file = $request->file("foto_kandidat");
+
+        // Generate file name with token and original extension
+        $fileimg = $token . '.' . $file->getClientOriginalExtension();
+
+        // Save the uploaded file to a designated directory (if needed)
+        $file->move('pendaftar', $fileimg);
+
+        // Prepare data for candidate creation
         $data = [
             "nama_kandidat" => $request->nama_kandidat,
             "calon_kandidat" => $request->calon_kandidat,
-            "foto_kandidat" => $request->foto_kandidat,
+            "foto_kandidat" => $fileimg, // Save file name to database
         ];
 
+        // Create a new Kandidat model instance
         Kandidat::create($data);
+
+        // Redirect to the candidates list page
         return redirect('/kandidat');
     }
+
     public function update($id)
     {
         $data = Kandidat::where('id', $id)->first();

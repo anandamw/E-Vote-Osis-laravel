@@ -15,23 +15,23 @@ class KandidatSeeder extends Seeder
      */
     public function run()
     {
-        $createData = [
-            [
-                'nama_kandidat' =>  "Kandidat 1",
-                'calon_kandidat' =>  "Nanda & Elisa",
+        // $createData = [
+        //     [
+        //         'nama_kandidat' =>  "Kandidat 1",
+        //         'calon_kandidat' =>  "Nanda & Elisa",
 
-                'foto_kandidat' => 'kandidat.jpg',
-            ],
-            [
-                'nama_kandidat' =>  "Kandidat 2",
-                'calon_kandidat' =>  "Yanto & Yanti",
+        //         'foto_kandidat' => 'kandidat.jpg',
+        //     ],
+        //     [
+        //         'nama_kandidat' =>  "Kandidat 2",
+        //         'calon_kandidat' =>  "Yanto & Yanti",
 
-                'foto_kandidat' => 'kandidat.jpg',
-            ],
+        //         'foto_kandidat' => 'kandidat.jpg',
+        //     ],
 
-        ];
-        foreach ($createData as $data) {
-            Kandidat::create($data);
-        }
+        // ];
+        // foreach ($createData as $data) {
+        //     Kandidat::create($data);
+        // }
     }
 }

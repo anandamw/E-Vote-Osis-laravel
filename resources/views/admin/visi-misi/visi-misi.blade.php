@@ -25,7 +25,10 @@
                                             <th>Nama Kandidat</th>
                                             <th>Visi</th>
                                             <th>Misi</th>
-                                            <th>Action</th>
+                                            @if (Auth::user()->role !== 'siswa')
+                                                <th>Action</th>
+                                            @endif
+
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -39,14 +42,16 @@
 
                                                 <td>
                                                     <div class="d-flex">
-                                                        <a href="/visi-misi/{{ $get->id }}/update"
-                                                            class="btn btn-primary shadow btn-xs sharp me-1"><i
-                                                                class="fas fa-pencil-alt"></i></a>
-                                                        <button type="button" class="btn btn-danger shadow btn-xs sharp"
-                                                            data-bs-toggle="modal"
-                                                            data-bs-target="#exampleModalCenter{{ $get->id }}"><i
-                                                                class="fa fa-trash"></i></button>
-
+                                                        @if (Auth::user()->role !== 'siswa')
+                                                            <a href="/visi-misi/{{ $get->id }}/update"
+                                                                class="btn btn-primary shadow btn-xs sharp me-1"><i
+                                                                    class="fas fa-pencil-alt"></i></a>
+                                                            <button type="button"
+                                                                class="btn btn-danger shadow btn-xs sharp"
+                                                                data-bs-toggle="modal"
+                                                                data-bs-target="#exampleModalCenter{{ $get->id }}"><i
+                                                                    class="fa fa-trash"></i></button>
+                                                        @endif
                                                         <!-- Modal -->
                                                         <div class="modal fade" id="exampleModalCenter{{ $get->id }}">
                                                             <div class="modal-dialog modal-dialog-centered" role="document">
